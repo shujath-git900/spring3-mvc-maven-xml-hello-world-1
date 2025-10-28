@@ -3,26 +3,49 @@ pipeline {
 
     stages {
         stage('Code Lint') {
-        when { not {buildingTag()} }
-            steps {
-                sh "env"
+        when {
+          allOf {
+            not {buildingTag()}
+            branch 'production'
+              }
+            }
+         steps {
+           sh "env"
             }
         }
 
 stage('Unit Test') {
- when { not {buildingTag()} }
+        when {
+          allOf {
+            not {buildingTag()}
+            branch 'production'
+              }
+            }
+
             steps {
                 echo 'Unit Test'
             }
         }
 stage('Integration Test') {
- when { not {buildingTag()} }
+         when {
+           allOf {
+             not {buildingTag()}
+             branch 'production'
+               }
+             }
+
             steps {
                 echo 'Integration Test'
             }
         }
 stage('Sonar Scan') {
- when { not {buildingTag()} }
+         when {
+           allOf {
+             not {buildingTag()}
+             branch 'production'
+               }
+             }
+
             steps {
                 echo 'Sonar Scan'
             }
