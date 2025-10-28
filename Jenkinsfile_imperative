@@ -14,7 +14,7 @@ else{
  print 'OK'
  }
 
-if(env.BRANCH_NAME != 'main'){
+if(env.BRANCH_NAME != 'master'){
 stage('Unit Test') {
  print 'OK'
  }
