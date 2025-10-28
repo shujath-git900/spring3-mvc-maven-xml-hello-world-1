@@ -1,4 +1,14 @@
 node(){
+
+if (binding.hasVariable('TAG_NAME')){
+ stage('Software Release') {
+ print 'OK'
+ }
+   stage('Build Code') {
+    print 'OK'
+    }
+else{
+
  stage('Code Lint') {
  print 'OK'
  }
@@ -11,18 +21,9 @@ node(){
  stage('Sonar Scan') {
  print 'OK'
  }
- if (binding.hasVariable('TAG_NAME')){
-   stage('Build Code') {
-    print 'OK'
-    }
 
-   }
-
-if (binding.hasVariable('TAG_NAME')){
- stage('Software Release') {
- print 'OK'
+  }
  }
-}
 }
 
 
