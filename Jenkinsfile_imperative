@@ -1,10 +1,22 @@
 node(){
- stage('Code Lint') {}
- stage('Unit Test') {}
- stage('Integration Test') {}
- stage('Sonar Scan') {}
- stage('Build Code') {}
- stage('Software Release') {}
+ stage('Code Lint') {
+ print 'OK'
+ }
+ stage('Unit Test') {
+ print 'OK'
+ }
+ stage('Integration Test') {
+ print 'OK'
+ }
+ stage('Sonar Scan') {
+ print 'OK'
+ }
+ stage('Build Code') {
+ print 'OK'
+ }
+ stage('Software Release') {
+ print 'OK'
+ }
 }
 
 
