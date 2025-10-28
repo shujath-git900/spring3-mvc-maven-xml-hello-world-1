@@ -11,12 +11,18 @@ node(){
  stage('Sonar Scan') {
  print 'OK'
  }
- stage('Build Code') {
- print 'OK'
- }
+ if (binding.hasVariable('TAG_NAME')){
+   stage('Build Code') {
+    print 'OK'
+    }
+
+   }
+
+if (binding.hasVariable('TAG_NAME')){
  stage('Software Release') {
  print 'OK'
  }
+}
 }
 
 
