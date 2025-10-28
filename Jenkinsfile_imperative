@@ -1,0 +1,16 @@
+node(){
+ stage('Code Lint') {}
+ stage('Unit Test') {}
+ stage('Integration Test') {}
+ stage('Sonar Scan') {}
+ stage('Build Code') {}
+ stage('Software Release') {}
+}
+
+
+
+
+
+
+
+
