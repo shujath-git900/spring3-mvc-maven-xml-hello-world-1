@@ -13,12 +13,16 @@ else{
  stage('Code Lint') {
  print 'OK'
  }
- stage('Unit Test') {
+
+if(env.BRANCH_NAME != 'main'){
+stage('Unit Test') {
  print 'OK'
  }
  stage('Integration Test') {
  print 'OK'
  }
+}
+
  stage('Sonar Scan') {
  print 'OK'
  }
