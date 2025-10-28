@@ -6,7 +6,7 @@ pipeline {
         when {
           allOf {
             not {buildingTag()}
-            branch 'production'
+            branch 'master'
               }
             }
          steps {
@@ -18,7 +18,7 @@ stage('Unit Test') {
         when {
           allOf {
             not {buildingTag()}
-            branch 'production'
+            branch 'master'
               }
             }
 
@@ -30,7 +30,7 @@ stage('Integration Test') {
          when {
            allOf {
              not {buildingTag()}
-             branch 'production'
+             branch 'master'
                }
              }
 
@@ -42,7 +42,7 @@ stage('Sonar Scan') {
          when {
            allOf {
              not {buildingTag()}
-             branch 'production'
+             branch 'master'
                }
              }
 
