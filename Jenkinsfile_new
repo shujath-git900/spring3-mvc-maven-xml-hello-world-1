@@ -25,6 +25,7 @@ stage('Sonar Scan') {
         }
 
 stage('Software Release') {
+        when { buildingTag() }
             steps {
                 echo 'Software Release'
             }
