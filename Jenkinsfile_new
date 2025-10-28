@@ -2,9 +2,31 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Code Lint') {
             steps {
-                echo 'Hello World'
+                sh "env"
+            }
+        }
+
+stage('Unit Test') {
+            steps {
+                echo 'Unit Test'
+            }
+        }
+stage('Integration Test') {
+            steps {
+                echo 'Integration Test'
+            }
+        }
+stage('Sonar Scan') {
+            steps {
+                echo 'Sonar Scan'
+            }
+        }
+
+stage('Software Release') {
+            steps {
+                echo 'Software Release'
             }
         }
     }
