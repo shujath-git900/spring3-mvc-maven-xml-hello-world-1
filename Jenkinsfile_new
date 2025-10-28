@@ -3,26 +3,37 @@ pipeline {
 
     stages {
         stage('Code Lint') {
+        when { not {buildingTag()} }
             steps {
                 sh "env"
             }
         }
 
 stage('Unit Test') {
+ when { not {buildingTag()} }
             steps {
                 echo 'Unit Test'
             }
         }
 stage('Integration Test') {
+ when { not {buildingTag()} }
             steps {
                 echo 'Integration Test'
             }
         }
 stage('Sonar Scan') {
+ when { not {buildingTag()} }
             steps {
                 echo 'Sonar Scan'
             }
         }
+
+        stage('Build Code') {
+                when { buildingTag() }
+                    steps {
+                        echo 'Build Code'
+                    }
+                }
 
 stage('Software Release') {
         when { buildingTag() }
